@@ -27,7 +27,12 @@ const targets = [
 ];
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({
+  headless: "new",
+  executablePath: "/usr/bin/chromium-browser",
+  args: ["--no-sandbox", "--disable-setuid-sandbox"]
+});
+
   const page = await browser.newPage();
   let message = "📰 *今日のWebマーケティングニュースまとめ*\n";
 
