@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 const fetch = require("node-fetch");
 
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/xxxxx/yyyyy/zzzzz"; // ← 自分のに差し替えて！
+const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
 const targets = [
   {
@@ -28,10 +28,10 @@ const targets = [
 
 (async () => {
   const browser = await puppeteer.launch({
-  headless: "new",
-  executablePath: "/usr/bin/chromium-browser",
-  args: ["--no-sandbox", "--disable-setuid-sandbox"]
-});
+    headless: "new",
+    executablePath: "/usr/bin/chromium-browser",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+  });
 
   const page = await browser.newPage();
   let message = "📰 *今日のWebマーケティングニュースまとめ*\n";
